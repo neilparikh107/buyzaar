@@ -12,7 +12,11 @@ gem 'cloudinary'
 #for an uploader
 gem 'carrierwave', '~> 1.0'
 
+#to set the role of user
 gem 'rolify'
+
+#to authorize and give restricted ability
+gem "cancan"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'

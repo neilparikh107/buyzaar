@@ -21,6 +21,12 @@ gem "cancan"
 #for styles
 gem 'bootstrap-sass', '~> 3.3.6'
 
+#for creating latitudes and longitudes
+gem 'geocoder'
+
+#for plotting on maps
+gem 'gmaps4rails'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '5.0.0'
 # Use sqlite3 as the database for Active Record

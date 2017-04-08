@@ -1,6 +1,16 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+body {
+  background: white;
+  // background-image: url(/assets/path)
+  background-size: cover;
+}
+
+.name {
+  font-style: italic;
+}
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.

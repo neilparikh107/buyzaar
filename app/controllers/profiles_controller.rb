@@ -5,6 +5,11 @@ class ProfilesController < ApplicationController
   # GET /profiles.json
   def index
     @profiles = Profile.all
+    @hash = Gmaps4rails.build_markers(@profiles) do |profile, marker|
+      marker.lat profile.latitude
+      marker.lng profile.longitude
+      marker.infowindow profile.first_name
+    end
   end
 
   # GET /profiles/1
@@ -25,6 +30,7 @@ class ProfilesController < ApplicationController
   # POST /profiles.json
   def create
     @profile = Profile.new(profile_params)
+    @profile.user = current_user
 
     respond_to do |format|
       if @profile.save
@@ -69,6 +75,6 @@ class ProfilesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def profile_params
-      params.require(:profile).permit(:first_name, :last_name, :street_number, :street_name, :suburb, :state, :country, :postcode, :picture)
+      params.require(:profile).permit(:first_name, :last_name, :street_number, :street_name, :suburb, :state, :country, :postcode, :picture, :user_id)
     end
 end

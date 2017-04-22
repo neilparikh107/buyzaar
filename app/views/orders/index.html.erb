@@ -17,13 +17,17 @@
   <tbody>
     <% @orders.each do |order| %>
       <tr>
-        <td><%= order.feedback_comment %></td>
+        <!-- Add a condition to check if feedback is present with the method .present?  -->
+        <% if order.feedback_comment.present? %>
+          <td><%= order.feedback_comment %></td>
+        <% else %>
+          <td><%= link_to 'Leave Feedback', edit_order_path(order), class: "btn btn-primary" %></td>
+        <% end %>
         <td><%= order.feedback_rating %></td>
         <td><%= order.buyer.profile.first_name %></td>
         <td><%= order.seller.profile.first_name %></td>
         <td><%= order.item_id %></td>
         <td><%= link_to 'Show', order %></td>
-        <td><%= link_to 'Edit', edit_order_path(order) %></td>
         <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>

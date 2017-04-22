@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :orders
   resources :items
   resources :profiles
   devise_for :users, controllers: { registrations: "registrations" }

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  feedback_comment: MyString
+  feedback_rating: 1
+  buyer_id: 1
+  seller_id: 1
+  item_id: 1
+
+two:
+  feedback_comment: MyString
+  feedback_rating: 1
+  buyer_id: 1
+  seller_id: 1
+  item_id: 1

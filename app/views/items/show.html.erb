@@ -35,6 +35,14 @@
   <%= @item.rating %>
 </p>
 
+<!-- We need a buy button -->
+<%= simple_form_for(@order) do |f| %>
+  <%= f.hidden_field :item_id, value: @item.id %>
+  <div class="form-actions">
+    <%= f.submit "Buy", class: "btn btn-info" %>
+  </div>
+<% end %>
+
 
 <%= link_to 'Edit', edit_item_path(@item) %> |
 <%= link_to 'Back', items_path %>

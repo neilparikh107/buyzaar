@@ -17,8 +17,8 @@
         <% if user_signed_in? %>
           <li class="name"><%= link_to "Buy", items_path %></li>
           <li><%= link_to "Sell", new_item_path %></li>
+          <li><%= link_to "Orders", orders_path %></li>
           <li><%= link_to "Profile", profile_path(current_user.profile) if current_user.profile %></li>
-
         <% end %>
 
         <li class="dropdown">
